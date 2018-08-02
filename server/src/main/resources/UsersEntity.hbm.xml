@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.cloud.storage.server.entity.UsersEntity" table="users" schema="cloudstorage">
+        <id name="id">
+            <column name="id" sql-type="int(11)"/>
+        </id>
+        <property name="guid">
+            <column name="guid" sql-type="varchar(36)" length="36" not-null="true"/>
+        </property>
+        <property name="username">
+            <column name="username" sql-type="varchar(255)"/>
+        </property>
+        <property name="login">
+            <column name="login" sql-type="varchar(255)"/>
+        </property>
+        <property name="password">
+            <column name="password" sql-type="varchar(255)"/>
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.cloud.storage.server.entity.FilesEntity" table="files" schema="cloudstorage">
+        <id name="id">
+            <column name="id" sql-type="int(11)"/>
+        </id>
+        <property name="userid">
+            <column name="userid" sql-type="int(11)"/>
+        </property>
+        <property name="part">
+            <column name="part" sql-type="int(11)" not-null="true"/>
+        </property>
+        <property name="parts">
+            <column name="parts" sql-type="int(11)" not-null="true"/>
+        </property>
+        <property name="filename">
+            <column name="filename" sql-type="varchar(255)"/>
+        </property>
+        <property name="path">
+            <column name="path" sql-type="varchar(255)"/>
+        </property>
+        <property name="date">
+            <column name="date" sql-type="datetime"/>
+        </property>
+        <property name="type">
+            <column name="type" sql-type="varchar(45)" length="45" not-null="true"/>
+        </property>
+        <property name="size">
+            <column name="size" sql-type="decimal(50)" precision="50" not-null="true"/>
+        </property>
+        <property name="guid">
+            <column name="guid" sql-type="varchar(36)" length="36" not-null="false"/>
+        </property>
+    </class>
+</hibernate-mapping>
