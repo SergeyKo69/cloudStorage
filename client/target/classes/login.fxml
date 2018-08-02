@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.geometry.Point3D?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+            minWidth="-Infinity" xmlns="http://javafx.com/javafx/8.0.121"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.cloud.storage.client.LoginController">
+    <center>
+        <Pane BorderPane.alignment="CENTER">
+            <children>
+                <VBox alignment="CENTER" prefHeight="68.0" prefWidth="300.0">
+                    <children>
+                        <Label alignment="CENTER" contentDisplay="CENTER" text="Cloud storage" textFill="#000000cd">
+                            <font>
+                                <Font size="23.0" />
+                            </font>
+                        </Label>
+                    </children>
+                </VBox>
+                <VBox fx:id="boxLogin" alignment="CENTER" prefHeight="252.0" prefWidth="300.0">
+                    <children>
+                        <Label text="Sign In">
+                            <padding>
+                                <Insets bottom="10.0" />
+                            </padding>
+                            <font>
+                                <Font size="20.0" />
+                            </font>
+                        </Label>
+                        <HBox alignment="CENTER">
+                            <children>
+                                <Label contentDisplay="CENTER" prefHeight="17.0" prefWidth="87.0" text="Login:">
+                                    <padding>
+                                        <Insets left="25.0" />
+                                    </padding>
+                                </Label>
+                                <TextField fx:id="txtLogin" prefHeight="27.0" prefWidth="241.0" HBox.hgrow="ALWAYS">
+                                    <padding>
+                                        <Insets right="5.0" />
+                                    </padding>
+                                </TextField>
+                            </children>
+                            <padding>
+                                <Insets left="5.0" right="5.0" />
+                            </padding>
+                        </HBox>
+                        <HBox alignment="TOP_CENTER">
+                            <children>
+                                <Label contentDisplay="CENTER" text="Password:">
+                                    <rotationAxis>
+                                        <Point3D />
+                                    </rotationAxis>
+                                    <padding>
+                                        <Insets right="5.0" top="5.0" />
+                                    </padding>
+                                </Label>
+                                <PasswordField fx:id="txtPassword" HBox.hgrow="ALWAYS" onKeyPressed="#clickPasswordPressed"/>
+                            </children>
+                            <padding>
+                                <Insets left="5.0" right="5.0" top="3.0" />
+                            </padding>
+                        </HBox>
+                        <HBox alignment="TOP_RIGHT">
+                            <children>
+                                <Button fx:id="bSignIn" mnemonicParsing="false" onAction="#clickSingIn" text="Sign in">
+                                    <HBox.margin>
+                                        <Insets right="5.0" />
+                                    </HBox.margin>
+                                </Button>
+                                <Button fx:id="bRegistration" mnemonicParsing="false" onAction="#clickRegistration" text="Registration">
+                                    <HBox.margin>
+                                        <Insets right="5.0" />
+                                    </HBox.margin>
+                                </Button>
+                                <Button fx:id="bExit" mnemonicParsing="false" onAction="#clickExit" text="Exit">
+                                    <HBox.margin>
+                                        <Insets right="5.0" />
+                                    </HBox.margin>
+                                </Button>
+                                <Button fx:id="bSettings" mnemonicParsing="false" onAction="#clickSettings" text="Settings">
+                                    <HBox.margin>
+                                        <Insets right="5.0" />
+                                    </HBox.margin>
+                                </Button>
+                            </children>
+                            <padding>
+                                <Insets top="10.0" />
+                            </padding>
+                        </HBox>
+                    </children>
+                    <padding>
+                        <Insets top="20.0" />
+                    </padding>
+                </VBox>
+                <VBox fx:id="boxRegistration" alignment="CENTER" layoutX="3.0" layoutY="68.0" prefHeight="161.0" prefWidth="300.0" visible="false">
+                    <children>
+                        <Label text="Registration" VBox.vgrow="ALWAYS">
+                            <font>
+                                <Font size="20.0" />
+                            </font>
+                            <VBox.margin>
+                                <Insets bottom="20.0" />
+                            </VBox.margin>
+                        </Label>
+                        <HBox VBox.vgrow="ALWAYS">
+                            <children>
+                                <Label text="User name:">
+                                    <HBox.margin>
+                                        <Insets left="13.0" right="5.0" top="5.0" />
+                                    </HBox.margin>
+                                </Label>
+                                <TextField fx:id="txtUserName" HBox.hgrow="ALWAYS">
+                                    <HBox.margin>
+                                        <Insets right="5.0" />
+                                    </HBox.margin>
+                                </TextField>
+                            </children>
+                            <VBox.margin>
+                                <Insets left="5.0" right="5.0" />
+                            </VBox.margin>
+                        </HBox>
+                        <HBox VBox.vgrow="ALWAYS">
+                            <children>
+                                <Label text="Login:">
+                                    <HBox.margin>
+                                        <Insets left="45.0" top="5.0" />
+                                    </HBox.margin>
+                                </Label>
+                                <TextField fx:id="txtRLogin" HBox.hgrow="ALWAYS">
+                                    <HBox.margin>
+                                        <Insets left="5.0" right="5.0" />
+                                    </HBox.margin>
+                                </TextField>
+                            </children>
+                            <padding>
+                                <Insets left="5.0" right="5.0" top="3.0" />
+                            </padding>
+                        </HBox>
+                        <HBox VBox.vgrow="ALWAYS">
+                            <children>
+                                <Label text="Password:">
+                                    <padding>
+                                        <Insets left="19.0" right="5.0" top="5.0" />
+                                    </padding>
+                                </Label>
+                                <PasswordField fx:id="txtRPassword" HBox.hgrow="ALWAYS">
+                                    <HBox.margin>
+                                        <Insets right="5.0" />
+                                    </HBox.margin>
+                                </PasswordField>
+                            </children>
+                            <VBox.margin>
+                                <Insets left="5.0" right="5.0" />
+                            </VBox.margin>
+                            <padding>
+                                <Insets top="3.0" />
+                            </padding>
+                        </HBox>
+                        <HBox VBox.vgrow="ALWAYS">
+                            <children>
+                                <Label text="Re password:">
+                                    <HBox.margin>
+                                        <Insets right="5.0" top="5.0" />
+                                    </HBox.margin>
+                                </Label>
+                                <PasswordField fx:id="txtRePassword" HBox.hgrow="ALWAYS">
+                                    <HBox.margin>
+                                        <Insets right="5.0" />
+                                    </HBox.margin>
+                                </PasswordField>
+                            </children>
+                            <padding>
+                                <Insets left="5.0" right="5.0" />
+                            </padding>
+                            <VBox.margin>
+                                <Insets top="3.0" />
+                            </VBox.margin>
+                        </HBox>
+                        <HBox alignment="BOTTOM_RIGHT" VBox.vgrow="ALWAYS">
+                            <children>
+                                <Button mnemonicParsing="false" onAction="#clickApply" text="Apply">
+                                    <HBox.margin>
+                                        <Insets right="2.0" />
+                                    </HBox.margin>
+                                </Button>
+                                <Button mnemonicParsing="false" onAction="#clickLast" text="Sign in">
+                                    <HBox.margin>
+                                        <Insets right="2.0" />
+                                    </HBox.margin>
+                                </Button>
+                                <Button mnemonicParsing="false" onAction="#clickExit" text="Exit">
+                                    <HBox.margin>
+                                        <Insets right="5.0" />
+                                    </HBox.margin>
+                                </Button>
+                            </children>
+                            <VBox.margin>
+                                <Insets right="5.0" top="10.0" />
+                            </VBox.margin>
+                        </HBox>
+                    </children>
+                </VBox>
+                <VBox fx:id="boxInformation" alignment="BOTTOM_CENTER" layoutX="7.0" layoutY="200.0" prefHeight="45.0" prefWidth="292.0">
+                    <children>
+                        <HBox alignment="TOP_CENTER" prefHeight="36.0" prefWidth="292.0" VBox.vgrow="ALWAYS">
+                            <VBox.margin>
+                                <Insets top="40.0" />
+                            </VBox.margin>
+                            <children>
+                                <Label fx:id="lblInformation" alignment="TOP_LEFT" contentDisplay="TOP" text="login not found" textFill="#ff0404">
+                                    <HBox.margin>
+                                        <Insets />
+                                    </HBox.margin>
+                                </Label>
+                            </children>
+                        </HBox>
+                    </children>
+                    <padding>
+                        <Insets top="40.0" />
+                    </padding>
+                </VBox>
+            </children>
+        </Pane>
+    </center>
+</BorderPane>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TableColumn?>
+
+<VBox alignment="center" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="com.cloud.storage.client.Controller">
+   <children>
+       <VBox>
+          <children>
+              <HBox alignment="TOP_RIGHT">
+                 <children>
+                     <Label fx:id="lblUserName" alignment="CENTER" text="user" HBox.hgrow="ALWAYS">
+                     <HBox.margin>
+                        <Insets right="10.0" top="5.0" />
+                     </HBox.margin>
+                  </Label>
+                     <Button fx:id="bExit" text="log out" onMouseClicked="#btnClickLogOut"/>
+                 </children>
+              </HBox>
+          </children>
+   
+       </VBox>
+       <TableView fx:id="tableFiles" editable="false" onMouseClicked="#ClickTableFiles" VBox.vgrow="ALWAYS">
+           <columns>
+               <TableColumn fx:id="date" text="Дата" />
+               <TableColumn fx:id="name" text="Имя файла" />
+               <TableColumn fx:id="size" text="Размер" />
+               <TableColumn fx:id="id" text="id" visible="false" />
+               <TableColumn fx:id="guid" text="guid" visible="false" />
+               <TableColumn fx:id="ext" text="ext" visible="false" />
+           </columns>
+       </TableView>
+       <HBox fx:id="boxOperations" visible="false">
+          <children>
+              <Button onAction="#btnClickUpload" text="Upload" />
+              <Button fx:id="bRename" disable="true" onAction="#btnClickRename" text="Rename" />
+              <Button fx:id="bDelete" disable="true" onAction="#btnClickDelete" text="Delete" />
+              <Button fx:id="bDownload" disable="true" onAction="#btnClickDownload" text="Download" />
+          </children>
+       </HBox>
+       <HBox fx:id="boxRename" visible="false">
+          <children>
+              <Label text="Please enter new name: " />
+              <TextField fx:id="txtRename" />
+              <Button onAction="#btnClickOKRename" text="OK" />
+              <Button onAction="#btnClickCancelRename" text="Cancel" />
+          </children>
+       </HBox>
+   </children>
+</VBox>
